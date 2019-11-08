@@ -58,14 +58,20 @@ public class BotManager : MonoBehaviour {
 
 	public void Init () {
 		int i,j;
-
+		//Move to singlton manager?
 		mainCam = Camera.main;
+		//Not needed?
 		botMatrices = new List<Matrix4x4[]>();
+		// Move to bot entity
 		botColors = new List<Vector4[]>();
+		//TBD
 		botMatProperties = new List<MaterialPropertyBlock>();
+		//singlton manager
 		factory = GetComponent<FactoryManager>();
+		// no longer needed, bots will each be an entity
 		bots = new List<FactoryBot>();
 		
+		//not needed bots will not be pooled this way
 		for (i=0;i<maxBotCount;i+=instanceCount) {
 			botMatrices.Add(new Matrix4x4[instanceCount]);
 			botColors.Add(new Vector4[instanceCount]);
@@ -81,7 +87,7 @@ public class BotManager : MonoBehaviour {
 		int i,j;
 
 		factory.map.occupantTicker++;
-
+		//move to bots system no loop needed
 		for (i = 0; i < bots.Count; i++) {
 			FactoryBot bot = bots[i];
 			Vector2Int tile = new Vector2Int(Mathf.FloorToInt(bot.position.x),Mathf.FloorToInt(bot.position.y));
