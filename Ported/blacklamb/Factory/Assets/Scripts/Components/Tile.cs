@@ -14,6 +14,7 @@ namespace Factory.Components
 
     namespace Author
     {
+        [RequiresEntityConversion]
         public class Tile : MonoBehaviour, IConvertGameObjectToEntity
         {
             public void Convert(Entity entity, EntityManager dstManager, GameObjectConversionSystem conversionSystem)

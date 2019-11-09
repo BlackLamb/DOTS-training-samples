@@ -16,6 +16,7 @@ namespace Factory.Components
 
     namespace Author
     {
+        [RequiresEntityConversion]
         public class Bot : MonoBehaviour, IConvertGameObjectToEntity
         {
             public float radius;

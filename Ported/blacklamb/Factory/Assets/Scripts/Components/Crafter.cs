@@ -13,6 +13,7 @@ namespace Factory.Components
 
     namespace Author
     {
+        [RequiresEntityConversion]
         public class Crafter : MonoBehaviour, IConvertGameObjectToEntity
         {
             public void Convert(Entity entity, EntityManager dstManager, GameObjectConversionSystem conversionSystem)
